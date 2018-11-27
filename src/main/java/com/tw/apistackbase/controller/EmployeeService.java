@@ -48,4 +48,8 @@ public class EmployeeService {
             }
         }
     }
+
+    public void deleteEmployee(Employee employee) {
+        employeesList.remove(employee.getId());
+    }
 }

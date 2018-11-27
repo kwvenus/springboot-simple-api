@@ -38,4 +38,9 @@ public class EmployeeController {
 
         employeeService.changeEmployee(employee);
     }
+
+    @DeleteMapping(produces = {"application/json"})
+    public void deleteEmployee(@RequestBody Employee employee) {
+        employeeService.deleteEmployee(employee);
+    }
 }
