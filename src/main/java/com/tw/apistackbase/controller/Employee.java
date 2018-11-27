@@ -6,6 +6,8 @@ import java.util.List;
 public class Employee {
     private int id;
     private String name;
+    private int age;
+    private String gender;
 
     public int getId() {
         return id;
@@ -39,11 +41,7 @@ public class Employee {
         this.gender = gender;
     }
 
-    private int age;
-    private String gender;
-
-    public Employee(int id, String name, int age, String gender) {
-        this.id = id;
+    public Employee(String name, int age, String gender) {
         this.name = name;
         this.age = age;
         this.gender = gender;
