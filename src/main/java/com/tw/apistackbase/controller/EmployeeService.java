@@ -52,4 +52,14 @@ public class EmployeeService {
     public void deleteEmployee(Employee employee) {
         employeesList.remove(employee.getId());
     }
+
+    public Employee getSpecificEmployee(int userId) {
+        Employee targetEmployee = null;
+        for (Employee employeeInList : employeesList){
+            if (employeeInList.getId() == userId){
+                targetEmployee = employeeInList;
+            }
+        }
+        return  targetEmployee;
+    }
 }

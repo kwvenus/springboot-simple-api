@@ -26,6 +26,14 @@ public class EmployeeController {
         return employeesList;
     }
 
+    @GetMapping(path = "/{userId}",  produces = {"application/json"})
+    public Employee getSpecificEmployee(@PathVariable int userId) {
+
+        Employee specificEmployee = employeeService.getSpecificEmployee(userId);
+        return specificEmployee;
+    }
+    
+
     @PostMapping(produces = {"application/json"})
     public int createEmployee(@RequestBody Employee employee) {
 
