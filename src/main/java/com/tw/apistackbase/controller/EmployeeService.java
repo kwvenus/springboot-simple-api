@@ -33,8 +33,19 @@ public class EmployeeService {
     }
 
     public int createEmployee(Employee employee) {
-        employee.setId(userId++);
         addEmployeesIntoList(employee);
         return userId;
+    }
+
+    public void changeEmployee(Employee employee) {
+        int userId = employee.getId();
+        for(Employee employeeInList:employeesList){
+            if (employeeInList.getId() == userId){
+                employeesList.remove(employeeInList);
+                addEmployeesIntoList(employee);
+                employee.setId(userId);
+                this.userId--;
+            }
+        }
     }
 }

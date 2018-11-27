@@ -32,4 +32,10 @@ public class EmployeeController {
         int userId = employeeService.createEmployee(employee);
         return userId;
     }
+
+    @PutMapping(produces = {"application/json"})
+    public void changeEmployee(@RequestBody Employee employee) {
+
+        employeeService.changeEmployee(employee);
+    }
 }
